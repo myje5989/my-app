@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './ToDo.css';
 import { Container, Row, Col ,Button, InputGroupAddon ,Input, Alert, Form, FormGroup} from 'reactstrap';
 
 
@@ -10,12 +10,24 @@ class ToDo extends Component {
 
     return (
       <div className="App">
+      <Container>
+        <br/>
+        <br/>
+        <br/>
+          <Row>
+        <Col></Col>
+          <Col>
        <Form inline>
-        <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-          <Input type="text" name="textbx" id="textbx" placeholder="Enter text !!" />
-          <InputGroupAddon addonType="append"><Button color="primary">+</Button></InputGroupAddon>
+        <FormGroup>
+          <Input type="text" name="textbx" id="textbx" size="lg" placeholder="Enter text !!" />
+          <InputGroupAddon addonType="append" ><Button size="lg" color="primary">+</Button></InputGroupAddon>
         </FormGroup>
       </Form>
+      </Col>
+      <Col></Col>
+      </Row>
+      </Container>
+
       </div>
 
     );
