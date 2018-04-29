@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import './ToDo.css';
-import { Container, Row, Col ,Button, InputGroupAddon ,Input, Alert, Form, FormGroup} from 'reactstrap';
+import { Container, Row, Col ,Button, InputGroupAddon ,InputGroup,Input, Alert, Form, FormGroup} from 'reactstrap';
 
 
 
 class ToDo extends Component {
+  state ={
+    task: ''
+  }
+
+  onAdd = () =>{
+    this.props.addToDo(this.state.task)
+  }
 
   render() {
 
@@ -17,15 +24,24 @@ class ToDo extends Component {
           <Row>
         <Col></Col>
           <Col>
-       <Form inline>
-        <FormGroup>
-          <Input type="text" name="textbx" id="textbx" size="lg" placeholder="Enter text !!" />
-          <InputGroupAddon addonType="append" ><Button size="lg" color="primary">+</Button></InputGroupAddon>
-        </FormGroup>
+       <Form inline >
+        <InputGroup>
+          <Input
+           size="lg" placeholder="Enter task !!"
+           value={this.state.task}
+           onChange = {(e) => this.setState({task: e.target.value })}
+           />
+          <InputGroupAddon addonType="append" >
+          <Button size="lg" color="primary">+</Button>
+          </InputGroupAddon>
+        </InputGroup>
       </Form>
       </Col>
       <Col></Col>
       </Row>
+      <br/>
+        <br/>
+        <br/>
       </Container>
 
       </div>
